@@ -37,3 +37,10 @@ remainder = mpower % N
 
 ## Diagrams
 ![main_diagram](Diagrams/MainASM.jpg)
+
+## Simulations
+### encryption
+![encryption](Diagrams/encryption-simulation.png)
+
+### decryption
+![encryption](Diagrams/decryption-simulation.png)
