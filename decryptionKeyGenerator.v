@@ -1,6 +1,6 @@
 `timescale 1ns / 1ps
 
-module dnew(input [7:0] p,
+module decryptionKeyGenerator(input [7:0] p,
     input [7:0] q,
     input [7:0] e1,
     input clk,
@@ -14,7 +14,7 @@ module dnew(input [7:0] p,
 	reg [15:0]e;
 	
 	wire [15:0]outResult,Q;
-	Divider d2(A[15:0],B[15:0],outResult,remainder);
+	Division16 d2(A[15:0],B[15:0],outResult,remainder);
 	assign Q=outResult;
 	always@(posedge clk)
 	begin

@@ -1,6 +1,6 @@
 `timescale 1ns / 1ps
 
-module modularmult(input [15:0]M,
+module modularMultiplicator(input [15:0]M,
 input [15:0]e,
 input [15:0]n,
 input start,
@@ -13,7 +13,7 @@ output [15:0] remainder
 reg [15:0] ncount;
 reg [31:0]x,n1;
 
-Divider32 d1(x,n1,outResult,remainder);
+Division32 d1(x,n1,outResult,remainder);
 
 always @(posedge clk)
 begin

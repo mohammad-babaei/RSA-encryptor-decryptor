@@ -21,19 +21,19 @@ module Main(
 	 wire [15:0] MPower;
 	 parameter InstructionSelector = 0;
 	 
-	 keygen k1 (firstPrimeNumber,secondPrimeNumber,start,clk,encryptionKey,finish);
-	 dnew kd1 (firstPrimeNumber,secondPrimeNumber,encryptionKey,clk,start1,n,decryptionKey,fin1);
+	 encryptionKeyGenerator k1 (firstPrimeNumber,secondPrimeNumber,start,clk,encryptionKey,finish);
+	 decryptionKeyGenerator kd1 (firstPrimeNumber,secondPrimeNumber,encryptionKey,clk,start1,n,decryptionKey,fin1);
 	 
 	 generate
 	 
 	 if(InstructionSelector)
 		begin
-		modularmult encryptor (Input,{8'b00000000,encryptionKey},n,start2,clk,finished,Mpower,Output);
+		modularMultiplicator encryptor (Input,{8'b00000000,encryptionKey},n,start2,clk,finished,Mpower,Output);
 		assign MPowerOutput = Mpower;
 		end
 	 else
 		begin
-	   modularmult decryptor (Input,decryptionKey,n,start2,clk,finished,Mpower,Output);
+	   modularMultiplicator decryptor (Input,decryptionKey,n,start2,clk,finished,Mpower,Output);
 		assign MPowerOutput = Mpower;
 		end
 	  

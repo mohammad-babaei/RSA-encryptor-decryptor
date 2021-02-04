@@ -1,6 +1,6 @@
 `timescale 1ns / 1ps
 
-module keygen(
+module encryptionKeyGenerator(
 input [7:0]p,
 input [7:0]q,
 input start,
@@ -18,7 +18,7 @@ assign phin=(p-1)*(q-1);  //calculating phi(n)
 reg [15:0]x,y,random,gcd;
 wire [15:0]r,x1,y1;
 
-Divider d2(x1,y1,outResult,r);
+Division16 d2(x1,y1,outResult,r);
 assign y1=y,x1=x;
 
 
